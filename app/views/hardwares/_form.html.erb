@@ -1,0 +1,38 @@
+
+
+<style type="text/css">
+	
+	.centro{
+		text-align: center;
+	
+	}
+</style>
+
+<%= form_for(@hardware) do |f| %>
+<div class="centro">
+<p>
+	<%= f.label :Nome %><br>
+	<%= f.text_field :nome %>
+</p>
+<p>
+	<%= f.label :Tipo %><br>
+	<%= f.text_field :tipo %>
+</p>
+<p>
+	<%= f.label :Descricão %><br>
+	<%= f.text_area :descricao, cols: 20, rows:5 %>
+</p>
+<p>
+	<%= f.label :Valor_de_venda %><br>
+	<%= f.number_field :valor %>
+</p>
+<p>
+	<%= f.label :Imagem %><br>
+	<%= f.text_field :poster, placeholder: ".JPEG ou PNG"%>
+</p>
+<p>
+	<%= f.submit %>	
+	<%= link_to 'Cancelar', hardwares_path %>
+</p>
+</div>
+<%end%>

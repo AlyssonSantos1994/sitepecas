@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<article>
+<header>
+<h1><%= @hardware.nome %></h1>
+<%= imagem(@hardware) %>
+</header>
+<h3>Tipo</h3>
+<p><%= @hardware.tipo %></p>
+<h3>Descrição</h3>
+<p><%= @hardware.descricao %></p>
+<h3>Valor:</h3>
+<p><%= @hardware.valor %></p>
+</article>
+<%= link_to "Hardwares", hardwares_path %>
+<%= link_to "Editar", edit_hardware_path(@hardware) %>
+<%= link_to "Deletar Produto", hardware_path(@hardware), method: :delete, data:{ confirm:"Deseja Remover Esse Produto?"} %>
+</body>
+</html>

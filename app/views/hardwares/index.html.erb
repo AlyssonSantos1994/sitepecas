@@ -1,0 +1,56 @@
+
+<article>
+	<div class="container">
+	
+
+	<div class="row">
+	<div class="col-lg-12">
+	
+	
+	<style type="text/css">
+	*{
+		padding: 0px; margin: 0px;
+	}
+	.centro{
+		text-align: center;
+	
+	}
+
+	</style>
+
+	<h1 class="page-header"><%= pluralize(@hardwares.size, 'HARDWARE', 'HARDWARES') %>
+	<small class="nova_peca"><%= link_to "Novo Hardware", new_hardware_path%></small>	
+
+	</h1>
+
+	</div>
+	</div>
+
+	<% @hardwares.each do |hardware| %>
+	
+	<div class="row">
+	<div class="col-xs-8 col-sm-6">
+	<%= link_to imagem(hardware), hardware %>
+	</div>
+	<div class="col-xs-4 col-sm-6">
+	<h3><%= link_to hardware.nome , hardware %></h3>
+	<h4>Descrição:</h4>
+	<p>
+	<%= truncate(hardware.descricao, length:18, separator: ' ') %>
+	</p>
+	<h4>Tipo:</h4>
+	<p>
+	<%= hardware.tipo%>	
+	</p>
+	
+	
+	<h4>Valor de Venda:</h4>
+	<p><%= formata_venda(hardware) %>
+	<%= number_to_currency(hardware.valor) %></p>
+	<br>
+	</div>	
+	</div>
+
+	<% end %>
+</article>
+
